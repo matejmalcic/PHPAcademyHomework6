@@ -16,8 +16,38 @@ echo 'property2 = ' . $a->property2 . '<br>';
 
 $task = new Task2();
 
+//Get Product value
 try {
-    echo $task->unsFirstName();
+    echo $task->getProduct();
 } catch (Exception $e) {
-    echo $e->getMessage() . '<br>';
+    echo $e->getMessage();
+} finally {
+    echo '<br>';
+
 }
+//var_dump($task->data);
+
+//Set new $data key value
+try {
+    $task->setCustomerID(241);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+//var_dump($task->data);
+
+//Check if $data['CustomerID'] value exists
+try {
+    echo $task->hasCustomerID() ? 'true' : 'false';
+} catch (Exception $e) {
+    echo $e->getMessage();
+} finally {
+    echo '<br>';
+}
+
+//Unset $data['CustomerID'] value
+try {
+    $task->unsCustomerID();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+//var_dump($task->data);
