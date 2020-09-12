@@ -17,7 +17,7 @@ echo 'property2 = ' . $a->property2 . '<br>';
 $task = new Task2();
 
 try {
-    echo $task->getFirstName();
+    echo $task->unsFirstName();
 } catch (Exception $e) {
     echo $e->getMessage() . '<br>';
 }
